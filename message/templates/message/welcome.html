@@ -1,0 +1,24 @@
+{% extends "message/base.html" %}
+{% block content %}
+  <a class="" href="{% url 'create-workspace' %}">New Workspace</a>
+  {% for workspace in workspaces %}
+    <div class="col-sm-6 col-lg-4 mb-4">
+      <div class="card">
+        <img class="rounded-circle article-img" src="{{ workspace.image.url }}">
+        <p><small class="tiny">{{ workspace.created_at | date:'F d, Y' }}</small></p>
+        <div class="card-body">
+          <a class="card-title" href="{{ workspace.get_absolute_url}}">{{ workspace.title }}</a>
+          <p class="card-text">{{ workspace.description}}</p>
+        </div>
+        {% if workspace.head == user %}
+        <div class="fa-icon">
+          <a href="{% url 'workspace-update' workspace.id %}" class="w-button"><i class="fa fa-heart"></i></a>
+          <a href="{% url 'workspace-delete' workspace.id %}" class="w-button"><i class="fa fa-trash"></i></a>
+          <a href="{% url 'workspace-update' workspace.id %}" class="w-button"><i class="fa fa-comment"></i></a>
+          <a href="{% url 'workspace-update' workspace.id %}" class="w-button"><i class="fa fa-share-alt"></i></a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+{% endblock content %}

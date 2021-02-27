@@ -1,0 +1,54 @@
+{% extends "message/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+	<div class= 'content-section'>
+		<form action="" method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<fieldset class='form-group'>
+				<legend class= 'boarder-bottom mb=4'>New Workspace</legend>
+				{% if workspace.head == user %}
+					{{ form|crispy }}
+				{% endif %}
+				{% for object in objects %}
+					{% if object.approved == False %}
+						<h3>{{ object.title }}</h3>
+						<h6>{{ object.approved }}</h6>
+						<h6>written by {{ object.author.user }}</h1>
+						{% if workspace.head == user %}
+							<a style='color: blue; float: right;' href="{% url 'approve' pk object.id %}">approve
+							<i class="fas fa-trash float-right"></i>
+							</a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+				<br>
+				<br>
+				<h2>Approved Announcements </h2>
+				{% for object in objects %}
+					{% if object.approved == True %}
+						<h3>{{ object.title }}</h3>
+						<h6>{{ object.approved }}</h6>
+						<h6>written by {{ object.author.user }}</h1>
+						{% if workspace.head == user %}
+							<a style='color: red; float: right;' href="{% url 'unapprove' pk object.id %}">unapprove
+							<i class="fas fa-trash float-right"></i>
+							</a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</fieldset>
+			<div class='form-group'>
+				<button class= 'btn- btn-outline-info' type="submit">Post</button>
+			</div>
+		</form>
+	      	<div>
+	      		<a class="btn info btn-sm mt-1 mb-1"href="{% url 'workspace-details' pk %}">Back</a>
+	      	</div>
+	</div>
+
+
+
+
+{% endblock content %}

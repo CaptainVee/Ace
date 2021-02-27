@@ -1,0 +1,53 @@
+{% load static %}
+<html>
+	{% if title %}
+		<title>Voice - {{title}}</title>
+	{% else %}
+		<title>Voice</title>
+	{% endif %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'message/main.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body class="d-flex h-100 text-center text-white bg-dark">
+
+<div class="w3-sidebar w3-bar-block w3-black w3-xxlarge ">
+<!-- 	<a href="{% url 'welcome' %}"><img class="main-logo fa" src="{% static 'message/logo.png' %}"/></a>
+ -->  <a style="margin-bottom: -7px;" href="{% url 'welcome' %}" class="w3-bar-item w3-button fa"><i class="fa fa-th"></i></a>
+  <a href="{% url 'welcome' %}" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a> 
+  <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a> 
+  <a style="margin-top: 235px" href="{% url 'logout' %}" class="w3-bar-item w3-button"><i class="fa fa-sign-out"></i></a>
+  <a style="margin-top: -20px" href="{% url 'profile' %}" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a> 
+</div>
+
+<div style="margin-left:100px">
+		<main role="main" class="w3-container">
+		<div class="row">
+			<div class="col-md-8">
+				{% if messages %}
+					{% for message in messages %}
+						<div class="alert alert-{{ message.tags }}">
+							{{ message }}
+						</div>
+					{% endfor %}
+				{% endif %}
+				<br>
+	  			{% block content %}{% endblock %}
+				
+			</div>
+		</div>
+	</main>
+</div>
+<hr>
+	<div class="footer-basic">
+        <footer>
+            <div class="social"><a href="https://www.instagram.com/tollgatorapp"><i class="icon ion-social-instagram"></i></a><a href="https://twitter.com/tollgator"><i class="icon ion-social-twitter"></i></a><a href="https://web.facebook.com/Tollgator-102626081740548"><i class="icon ion-social-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Home</a></li>
+                <li class="list-inline-item"><a href="#">Services</a></li>
+                <li class="list-inline-item"><a href="#">About</a></li>
+            </ul>
+            <p class="copyright">Tollgator -captainVee © 2021</p>
+        </footer>
+    </div>    
+</body>
+</html>

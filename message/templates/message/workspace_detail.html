@@ -1,0 +1,37 @@
+{% extends "message/base.html" %}
+{% block content %}
+	<article class="">
+		<img class="rounded-circle article-img" src="{{ object.image.url }}">
+	  <div class="media-body">
+	    <div class="article-metadata">
+		    <h2 style="text-align: left;" class="article-title" >{{ object.title }}</h2>	      
+		    {% if object.head == user %}
+		      <a href="{% url 'add-contributor' object.id %}">
+		      	<i class="fa fa-user" style="margin-bottom: 5px;"></i> Add Contributor
+		      </a>
+		    {% endif %}
+	    </div>
+	    <a href="{% url 'announcements' object.id %}"><i class="fa fa-user" style="margin-top: 30px;"></i> Approve messages</a>
+	    <br>
+	    <div class="media content-section">
+	    	{% if user.profile in object.is_contributor or object.head == user %}
+	    	<a href="{% url 'message' object.id %}" class="icon"><i class="fa fa-plus-circle"></i></a> 
+	    	{% endif %}
+	    <h2>Announcements</h2>
+		    {% for announcement in object.announcements %}
+		    	{% if announcement.approved == True %}
+			    <div class="card">
+				    <li><a class="card-title" href="{% url 'message-details' object.id announcement.id %}">{{ announcement.title }}</a></li>
+				    {% if announcement.image.url != '/media/defaulst.png' %}
+				    <img class="card-img" src="{{ announcement.image.url }}">
+				    {% endif %}
+				    <p class="article-content">{{ announcement.content }}</p>
+				</div>
+			    {% endif %}
+		    {% endfor %}
+	  
+	  </div>
+
+	</article> 
+
+{% endblock content %}
