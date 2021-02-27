@@ -168,7 +168,7 @@ a.article-title:hover {
   margin-bottom: 16px;
   padding: 0 8px;
 }
-
+/******* For Card *******8*/
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px 20px;
@@ -187,6 +187,14 @@ a.article-title:hover {
   font-size: 25px;
 
 }
+.expanded {
+  position: absolute;
+  display: none;
+}
+.card.expanded .text-content {
+  transform: translateY(-15px);
+}
+/*for container*/
 .container {
   border-radius: 5px;
   padding: 20px;

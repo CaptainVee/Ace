@@ -28,7 +28,7 @@ class Workspace(models.Model):
 
 	@property
 	def announcements(self):
-		return self.announcement_set.all().order_by('updated_at')
+		return self.announcement_set.all().order_by('-updated_at')
 
 
 class Announcement(models.Model):

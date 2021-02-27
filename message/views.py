@@ -117,7 +117,7 @@ class AnnouncementDetailView(DetailView):
 		return render(request, "message/announcement_detail.html", context)
 
 
-class AnnouncementUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class AnnouncementUpdateView(LoginRequiredMixin, UpdateView):
 	model = Announcement
 	fields = ['title', 'content']
 

@@ -13,14 +13,16 @@
 				{% endif %}
 				{% for object in objects %}
 					{% if object.approved == False %}
+					<div class="card">
 						<h3>{{ object.title }}</h3>
-						<h6>{{ object.approved }}</h6>
-						<h6>written by {{ object.author.user }}</h1>
+						<p>{{ object.content }}</p>
+						<h6>written by {{ object.author.user }}</h6>
 						{% if workspace.head == user %}
-							<a style='color: blue; float: right;' href="{% url 'approve' pk object.id %}">approve
-							<i class="fas fa-trash float-right"></i>
+							<a style='position: absolute; margin-top: -18px; font-size: initial;' href="{% url 'approve' pk object.id %}">approve
+							<i class="fa fa-thumbs-up"></i>
 							</a>
 						{% endif %}
+					</div>
 					{% endif %}
 				{% endfor %}
 				<br>
@@ -28,14 +30,16 @@
 				<h2>Approved Announcements </h2>
 				{% for object in objects %}
 					{% if object.approved == True %}
+					<div class="card">
 						<h3>{{ object.title }}</h3>
-						<h6>{{ object.approved }}</h6>
-						<h6>written by {{ object.author.user }}</h1>
+						<p>{{ object.content }}</p>
+						<h6>written by {{ object.author.user }}</h6>
 						{% if workspace.head == user %}
-							<a style='color: red; float: right;' href="{% url 'unapprove' pk object.id %}">unapprove
-							<i class="fas fa-trash float-right"></i>
+							<a style='color: #bb4444; position: absolute; margin-top: -18px; font-size: initial;' href="{% url 'unapprove' pk object.id %}">unapprove
+							<i class="fa fa-thumbs-down"></i>
 							</a>
 						{% endif %}
+					</div>
 					{% endif %}
 				{% endfor %}
 			</fieldset>

@@ -9,7 +9,7 @@
 	      <small class="text-muted">{{ object.created_at | date:'F d, Y' }}</small>
 	      {% if object.author.user == user %}
 	      	<div>
-	      		<a class="btn info btn-sm mt-1 mb-1" href="{% url 'message-update' object.workspace.id object.id %}">Update</a>
+	      		<a class="btn info btn-sm mt-1 mb-1" href="{% url 'message-update' object.id %}">Update</a>
 	      		<a class="btn danger btn-sm mt-1 mb-1" href="{% url 'message-delete' object.workspace.id object.id %}">Delete</a>	
 	      	</div>
 	      {% endif %}

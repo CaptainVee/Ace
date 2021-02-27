@@ -1,29 +1,46 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Profile Image hover effect</title>
-	<link rel="stylesheet" href="{% static 'message/main.css' %}">
+	{% load static %}
+		<link rel="stylesheet" href="{% static 'message/base.css' %}">
 
-	<!-- ------------ Font awesome CDN link ------------------ -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-</head>
-{% for workspace in workspaces %}
-<div class="card">
-  <div style="margin-bottom: 0px;" class="multi-button">
-	  	{% if workspace.head == user %}
-	 	<a href="{% url 'workspace-update' workspace.id %}" class="w-button"><i class="fas fa-heart"></i></a>
-	  	<a href="{% url 'workspace-delete' workspace.id %}" class="w-button"><i class="fas fa-trash"></i></a>
-	  	<a href="{% url 'workspace-update' workspace.id %}" class="w-button"><i class="fas fa-comment"></i></a>
-	  	 <a href="{% url 'workspace-update' workspace.id %}" class="w-button"><i class="fas fa-share-alt"></i></a>
-		{% endif %}
-  </div>
-  <div class="container">
-  	<a class="card-title" href="{{ workspace.get_absolute_url}}">{{ workspace.title }}</a>
-  	<p class="card-text">{{ workspace.description}}</p>
+		<!-- ------------ Font awesome CDN link ------------------ -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+		{% for workspace in workspaces %}
+<div class='container'>
+  <div class='card'>
+    <div class='front face'>
+      <h1>Mark Murray</h1>
+    </div>
+    <div class='back face'>
+      <h2>Mark Murray</h2>
+      <h3>Front-end Developer / Designer / Photographer</h3>
+      <ul>
+        <li>
+          <span>PHONE</span>
+        </li>
+        <li>
+          <span>EMAIL&nbsp;&nbsp;</span>
+          <a href='mailto:mmmarkmurray@gmail.com'>
+            mmmarkmurray@gmail.com
+          </a>
+        </li>
+        <li>
+          <span>WWW&nbsp;&nbsp;</span>
+          <a href='www.markmurray.co'>
+            www.markmurray.co
+          </a>
+        </li>
+      </ul>
+      <a href=''>
+        <div class='icon-share'></div>
+      </a>
+    </div>
   </div>
 </div>
-{% endfor %}
-  
-	
+<a href='https://www.markmurray.co'>
+  <button class='wobble-vertical'>Portfolio</button>
+</a>
+
+		{% endfor %}
+<div style="margin-top: 5px">
+	<br>
+</div>
