@@ -7,7 +7,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 
 from .models import Announcement, Workspace
-from .forms import AnnouncementUpdateForm, ContributorForm
+from .forms import AnnouncementUpdateForm, ContributorForm, ApproveForm
 from user.models import Profile
 # Create your views here.
 
@@ -74,7 +74,7 @@ class WorkspaceDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class AnnouncementListView(View):
 	def get(self, request, pk, *args, **kwargs):
-		form = AnnouncementUpdateForm()
+		form = ApproveForm()
 
 		announcement = Announcement.objects.filter(workspace=pk)
 		workspace = get_object_or_404(Workspace, pk=pk)
@@ -84,8 +84,6 @@ class AnnouncementListView(View):
 		'objects':announcement,
 		'workspace':workspace
 		}
-		for a in announcement:
-			print(a.author.user)
 		return render(self.request, "message/announcement_list.html", context)
 	
 	def post(self, request, pk, *args, **kwargs):
@@ -103,7 +101,7 @@ class AnnouncementListView(View):
 
 class AnnouncementCreateView(LoginRequiredMixin, CreateView):
 	model = Announcement
-	fields = ['title', 'content', 'image']
+	fields = ['title', 'content', 'image', 'expiry_date']
 	
 	def form_valid(self, form,):
 		form.instance.author = get_object_or_404(Profile, user=self.request.user)
@@ -111,10 +109,11 @@ class AnnouncementCreateView(LoginRequiredMixin, CreateView):
 		return super().form_valid(form)
 
 class AnnouncementDetailView(DetailView):
-	def get(self, request, pk, a_pk, *args, **kwargs):
-		announcement = Announcement.objects.filter(workspace=pk, pk=a_pk)[0]
-		context = {'object': announcement}
-		return render(request, "message/announcement_detail.html", context)
+	model = Announcement
+	# def get(self, request, pk, a_pk, *args, **kwargs):
+	# 	announcement = Announcement.objects.filter(workspace=pk, pk=a_pk)[0]
+	# 	context = {'object': announcement}
+	# 	return render(request, "message/announcement_detail.html", context)
 
 
 class AnnouncementUpdateView(LoginRequiredMixin, UpdateView):
@@ -178,12 +177,5 @@ class AddContributor(View):
 			return redirect("workspace-details", pk)
 
 
-class About(ListView):
-	model = Workspace
-	template_name = 'message/about.html'
-	context_object_name = 'workspaces'
-	paginate_by = 5
-
-	def get_queryset(self):
-		user = get_object_or_404(User, username=self.kwargs.get('username'))
-		return Workspace.objects.filter(head=user).order_by('-updated_at')
+def About(request):
+	return render(request, 'message/about.html', {'title': 'About'})

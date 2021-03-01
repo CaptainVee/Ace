@@ -25,13 +25,16 @@
 	    <h2>Announcements</h2>
 		{% for announcement in object.announcements %}
 		 	{% if announcement.approved == True %}
+		 	  {% if announcement.expiry_dates > -1 %}
 			    <div class="card" onclick="this.classList.toggle('expanded')">
-				    <li><a class="card-title" href="{% url 'message-details' object.id announcement.id %}">{{ announcement.title }}</a></li>
+				    <li><a class="card-title" href="{% url 'message-details' announcement.id %}">{{ announcement.title }}</a></li>
 				    {% if announcement.image.url != '/media/defaulst.png' %}
 				    <img class="card-img" src="{{ announcement.image.url }}">
 				    {% endif %}
 				    <p class="article-content">{{ announcement.content }}</p>
+				    <p><small class="tiny">Will expire on {{ announcement.expiry_date | date:'F d, Y' }}</small></p>
 				</div>
+			  {% endif %}
 			{% endif %}
 		{% endfor %}
 	</div>

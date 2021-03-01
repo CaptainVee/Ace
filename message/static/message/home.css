@@ -30,13 +30,44 @@ body {
 /*
  * Header
  */
-
+.fa-icon{
+  margin-bottom: -30px;
+  margin-top: 10px
+}
+.w3-bar-item {
+  padding: 8px 16px;
+  float: left;
+  width: auto;
+  border: none;
+  display: block;
+  outline: 0;
+  color: white;
+  }
+.w3-btn, .w3-button {
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  bott
+  white-space: nowrap;
+}
 .nav-masthead .nav-link {
   padding: .25rem 0;
   font-weight: 700;
   color: rgba(255, 255, 255, .5);
   background-color: transparent;
   border-bottom: .25rem solid transparent;
+}
+
+
+.fa{
+  margin-bottom: 30px;
 }
 
 .nav-masthead .nav-link:hover,

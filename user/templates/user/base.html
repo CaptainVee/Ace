@@ -6,7 +6,11 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.80.0">
+    {% if title %}
+    <title>Ace - {{title}}</title>
+      {% else %}
     <title>Ace</title>
+    {% endif %}
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
 	 <!-- Required meta tags -->
@@ -44,17 +48,19 @@
     
     <!-- Custom styles for this template -->
     <link href="{% static 'message/home.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body class="d-flex h-100 text-white bg-dark">
     
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
+      <a style="font-size: 30px;" href="{% url 'welcome' %}" class="w3-bar-item w3-button fa"><i class="fa fa-th"></i></a>
       <h3 href="{% url 'welcome' %}" style="float: left" class="float-md-start mb-0">Ace</h3>
       <nav class="nav nav-masthead justify-content-center float-md-end">
         <a class="nav-link active" aria-current="page" href="{% url 'welcome' %}">Home</a>
         <a class="nav-link" href="#">Features</a>
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="{% url 'about' %}">Contact</a>
       </nav>
     </div>
   </header>
