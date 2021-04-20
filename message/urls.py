@@ -16,7 +16,8 @@ WorkspaceDetailView,
 WorkspaceUpdateView,
 WorkspaceDeleteView,
 AddContributor,
-About)
+About,
+Feature)
 
 urlpatterns = [
 	path('', welcome, name='welcome'),
@@ -34,5 +35,6 @@ urlpatterns = [
 	path('workspace/<int:pk>/', WorkspaceDetailView.as_view(), name='workspace-details'),
 	path('workspace/<int:pk>/contributor/', AddContributor.as_view(), name='add-contributor'),
 	path('about/', About, name='about'), 
+	path('feature/', Feature, name='feature'), 
 
 ]

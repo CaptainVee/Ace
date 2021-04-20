@@ -1,169 +1,94 @@
-@import url(https://fonts.googleapis.com/css?family=Condiment|Lato:100,400);
-@import url(https://markmurray.co/codepen/entypostyle.css);
-*, *:after, *:before {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+/*
+ * Globals
+ */
+
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-  background: #3f474f;
-  font-size: 100%;
+
+/*
+ * Base structure
+ */
+
+body {
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  text-align: left;
 }
 
-a,
-a:visited,
-a:focus {
-  text-decoration: inherit;
-  font-weight: inherit;
-  color: inherit;
-}
-a:hover,
-a:visited:hover,
-a:focus:hover {
-  text-decoration: underline;
+.cover-container {
+  max-width: 42em;
 }
 
-h2, h3 {
-  font-weight: 300;
-}
 
-h2 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 5px;
+/*
+ * Header
+ */
+.fa-icon{
+  margin-bottom: -30px;
+  margin-top: 10px
 }
-
-h3 {
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-ul {
-  margin-top: 30px;
-}
-
-li {
-  font-size: 0.8rem;
-  margin: 15px 0 0 35px;
-}
-li a {
-  font-weight: 100;
-}
-li span {
-  margin-right: 10px;
-  color: #10d7af;
-  font-weight: 400;
-  font-size: 0.7em;
-}
-
-.container {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 450px;
-  height: 281px;
-  z-index: 1;
-  perspective: 1000px;
-}
-.container .card {
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: all 600ms linear;
-}
-.container .card .face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  background: #282e33;
-}
-.container .card .front {
-  overflow: hidden;
-  z-index: 2;
-}
-.container .card .front h1 {
-  font: 4em "Condiment", cursive;
-  color: #2f353b;
-  text-shadow: 0px 0px #24292e, 1px 1px #24292e, 2px 2px #24292e, 3px 3px #24292e, 4px 4px #24292e, 5px 5px #24292e, 6px 6px #24292e, 7px 7px #24292e, 8px 8px #24292e, 9px 9px #24292e, 10px 10px #24292e, 11px 11px #24292e, 12px 12px #24292e, 13px 13px #24292e, 14px 14px #24292e, 15px 15px #24292e, 16px 16px #24292e, 17px 17px #24292e, 18px 18px #24292e, 19px 19px #24292e, 20px 20px #24292e, 21px 21px #24292e, 22px 22px #24292e, 23px 23px #24292e, 24px 24px #24292e, 25px 25px #24292e, 26px 26px #24292e, 27px 27px #24292e, 28px 28px #24292e, 29px 29px #24292e, 30px 30px #24292e, 31px 31px #24292e, 32px 32px #24292e, 33px 33px #24292e, 34px 34px #24292e, 35px 35px #24292e, 36px 36px #24292e, 37px 37px #24292e, 38px 38px #24292e, 39px 39px #24292e, 40px 40px #24292e, 41px 41px #24292e, 42px 42px #24292e, 43px 43px #24292e, 44px 44px #24292e, 45px 45px #24292e, 46px 46px #24292e, 47px 47px #24292e, 48px 48px #24292e, 49px 49px #24292e, 50px 50px #24292e, 51px 51px #24292e, 52px 52px #24292e, 53px 53px #24292e, 54px 54px #24292e, 55px 55px #24292e, 56px 56px #24292e, 57px 57px #24292e, 58px 58px #24292e, 59px 59px #24292e, 60px 60px #24292e, 61px 61px #24292e, 62px 62px #24292e, 63px 63px #24292e, 64px 64px #24292e, 65px 65px #24292e, 66px 66px #24292e, 67px 67px #24292e, 68px 68px #24292e, 69px 69px #24292e, 70px 70px #24292e, 71px 71px #24292e, 72px 72px #24292e, 73px 73px #24292e, 74px 74px #24292e, 75px 75px #24292e, 76px 76px #24292e, 77px 77px #24292e, 78px 78px #24292e, 79px 79px #24292e, 80px 80px #24292e, 81px 81px #24292e, 82px 82px #24292e, 83px 83px #24292e, 84px 84px #24292e, 85px 85px #24292e, 86px 86px #24292e, 87px 87px #24292e, 88px 88px #24292e, 89px 89px #24292e, 90px 90px #24292e, 91px 91px #24292e, 92px 92px #24292e, 93px 93px #24292e, 94px 94px #24292e, 95px 95px #24292e, 96px 96px #24292e, 97px 97px #24292e, 98px 98px #24292e, 99px 99px #24292e, 100px 100px #24292e, 101px 101px #24292e, 102px 102px #24292e, 103px 103px #24292e, 104px 104px #24292e, 105px 105px #24292e, 106px 106px #24292e, 107px 107px #24292e, 108px 108px #24292e, 109px 109px #24292e, 110px 110px #24292e, 111px 111px #24292e, 112px 112px #24292e, 113px 113px #24292e, 114px 114px #24292e, 115px 115px #24292e, 116px 116px #24292e, 117px 117px #24292e, 118px 118px #24292e, 119px 119px #24292e, 120px 120px #24292e, 121px 121px #24292e, 122px 122px #24292e, 123px 123px #24292e, 124px 124px #24292e, 125px 125px #24292e, 126px 126px #24292e, 127px 127px #24292e, 128px 128px #24292e, 129px 129px #24292e, 130px 130px #24292e, 131px 131px #24292e, 132px 132px #24292e, 133px 133px #24292e, 134px 134px #24292e, 135px 135px #24292e, 136px 136px #24292e, 137px 137px #24292e, 138px 138px #24292e, 139px 139px #24292e, 140px 140px #24292e, 141px 141px #24292e, 142px 142px #24292e, 143px 143px #24292e, 144px 144px #24292e, 145px 145px #24292e, 146px 146px #24292e, 147px 147px #24292e, 148px 148px #24292e, 149px 149px #24292e, 150px 150px #24292e, 151px 151px #24292e, 152px 152px #24292e, 153px 153px #24292e, 154px 154px #24292e, 155px 155px #24292e, 156px 156px #24292e, 157px 157px #24292e, 158px 158px #24292e, 159px 159px #24292e, 160px 160px #24292e, 161px 161px #24292e, 162px 162px #24292e, 163px 163px #24292e, 164px 164px #24292e, 165px 165px #24292e, 166px 166px #24292e, 167px 167px #24292e, 168px 168px #24292e, 169px 169px #24292e, 170px 170px #24292e, 171px 171px #24292e, 172px 172px #24292e, 173px 173px #24292e, 174px 174px #24292e, 175px 175px #24292e, 176px 176px #24292e, 177px 177px #24292e, 178px 178px #24292e, 179px 179px #24292e, 180px 180px #24292e, 181px 181px #24292e, 182px 182px #24292e, 183px 183px #24292e, 184px 184px #24292e, 185px 185px #24292e, 186px 186px #24292e, 187px 187px #24292e, 188px 188px #24292e, 189px 189px #24292e, 190px 190px #24292e, 191px 191px #24292e, 192px 192px #24292e, 193px 193px #24292e, 194px 194px #24292e, 195px 195px #24292e, 196px 196px #24292e, 197px 197px #24292e, 198px 198px #24292e, 199px 199px #24292e, 200px 200px #24292e;
-  position: relative;
-  text-align: center;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.container .card .back {
-  display: block;
-  transform: rotateX(180deg);
-  box-sizing: border-box;
-  padding: 30px;
-  color: #dddddd;
-  background: #282e33;
-  z-index: 1;
-  font-family: "Lato", sans-serif;
-}
-.container .card .back .icon-share {
-  position: absolute;
-  right: 30px;
-  bottom: 30px;
-}
-.container:hover .card {
-  transform: rotateX(180deg);
-}
-
-button {
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.9);
-  font: 0.8em "Lato", sans-serif;
-  background: rgba(16, 215, 175, 0.95);
+.w3-bar-item {
+  padding: 8px 16px;
+  float: left;
+  width: auto;
   border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  box-shadow: 0 4px 0 0 #0b9075;
-  cursor: pointer;
-  position: fixed;
-  z-index: 10;
-  top: 15px;
-  right: 20px;
-}
-button:hover {
+  display: block;
+  outline: 0;
   color: white;
-  background: #10d7af;
-  top: 17px;
+  }
+.w3-btn, .w3-button {
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  bott
+  white-space: nowrap;
+}
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
 }
 
-/* Wobble Vertical */
-@keyframes wobble-vertical {
-  16.65% {
-    transform: translateY(8px);
-  }
-  33.3% {
-    transform: translateY(-4px);
-  }
-  49.95% {
-    transform: translateY(3px);
-  }
-  66.6% {
-    transform: translateY(-1px);
-  }
-  83.25% {
-    transform: translateY(1px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+
+.fa{
+  margin-bottom: 30px;
 }
-.wobble-vertical {
-  display: inline-block;
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
 }
-.wobble-vertical:hover {
-  animation-name: wobble-vertical;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: 1;
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  border: 1px solid #6c6e8487;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  background-color: rgb(18 27 37 / 58%)
 }

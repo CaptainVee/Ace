@@ -179,3 +179,6 @@ class AddContributor(View):
 
 def About(request):
 	return render(request, 'message/about.html', {'title': 'About'})
+
+def Feature(request):
+	return render(request, 'message/feature.html', {'title': 'Feature'})

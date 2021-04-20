@@ -12,7 +12,7 @@
         </div>
         {% if workspace.head == user %}
         <div class="fa-icon">
-          <a href="{% url 'workspace-update' workspace.id %}" class="w-button"><i class="fa fa-heart"></i></a>
+          <a href="{% url 'workspace-update' workspace.id %}" class="w-button"><i class="fa fa-pencil fa-fw"></i></a>
           <a href="{% url 'workspace-delete' workspace.id %}" class="w-button"><i class="fa fa-trash"></i></a>
         </div>
         {% endif %}

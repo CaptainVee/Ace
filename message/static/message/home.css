@@ -83,3 +83,12 @@ body {
   color: #fff;
   border-bottom-color: #fff;
 }
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  border: 1px solid #6c6e8487;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  background-color: rgb(18 27 37 / 58%)
+}

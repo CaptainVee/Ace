@@ -19,7 +19,7 @@
 
 	<div class="media content-section">
 	    	{% if user.profile in object.is_contributor or object.head == user %}
-	    	<a href="{% url 'message' object.id %}" class="icon"><i class="fa fa-plus-circle"></i></a> 
+	    	<a href="{% url 'message' object.id %}" class="icon"><i style="font-size: 33px;" class="fa fa-plus-circle"></i></a> 
 	    	{% endif %}
 
 	    <h2>Announcements</h2>

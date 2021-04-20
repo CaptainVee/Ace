@@ -1,6 +1,6 @@
 body {
   color: white;
-  background-color: rgb(18 27 37 / 58%);
+  background-color: #343a40;
   margin-top: inherit;
   margin-right: 0px;
   margin-left: 0px;
@@ -88,9 +88,7 @@ a.article-title:hover {
   white-space: pre-line;
 }
 .icon{
-  font-size: 200%;
-  margin-top: 30px;
-  float: right;
+  margin-top: 7px;
 }
 
 .fa{
@@ -262,58 +260,13 @@ a.article-title:hover {
   margin-top: 10px
 }
 .tiny{
-  font-size: 10px;
+  font-size: 12px;
+  color: #6c757d;
 }
 a{
   color: cornflowerblue;
   text-decoration: none;
 }
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 30%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-* {
-  box-sizing: border-box;
-}
-
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-
-input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
 .col-25 {
   float: left;
   width: 25%;
@@ -357,11 +310,6 @@ input[type=submit]:hover {
 
 .footer-basic ul a:hover {
   opacity:1;
-}
-
-.footer-basic .social {
-  text-align:center;
-  padding-bottom:25px;
 }
 
 .footer-basic .social > a {
