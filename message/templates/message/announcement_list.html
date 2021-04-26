@@ -8,6 +8,9 @@
 			{% csrf_token %}
 			<fieldset class='form-group'>
 				<legend class= 'boarder-bottom mb=4'>New Workspace</legend>
+			<div>
+	      		<a class="btn info btn-sm mt-1 mb-1"href="{% url 'workspace-details' pk %}">Back</a>
+	      	</div>
 				{% if workspace.head == user %}
 					{{ form|crispy }}
 				{% endif %}
