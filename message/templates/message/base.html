@@ -5,9 +5,10 @@
 
 	 <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Bootstrap CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+        <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/
@@ -18,39 +19,45 @@
 	<title>Msage</title>
 </head>
 <body>
-<div class="">
-  <header class="">
-    <div>
-      <a style="font-size: 30px;" href="{% url 'welcome' %}" class=""><i class="fa fa-th"></i></a>
-      <h3 href="{% url 'welcome' %}" style="float: left" class="">Ace</h3>
-      <nav class="">
-        <a class="nav-link" aria-current="page" href="{% url 'welcome' %}">Home</a>
-        <a class="nav-link" href="{% url 'feature' %}">Features</a>
-        <a class="nav-link" href="{% url 'about' %}">Contact</a>
-      </nav>
-    </div>
-  </header>
-  <main role="main" class="px-3">
-    <div class="row">
-      <div class="col-md-8">
-        {% if messages %}
-          {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-              {{ message }}
-            </div>
-          {% endfor %}
-        {% endif %}
-        <br>
-        {% block content %}{% endblock %}
-        
-      </div>
-    </div>
-  </main>
-
-  <footer class="mt-auto text-white-50">
-    <p style="margin-right: 5px" class="copyright">Ace © 2021</p>
-  </footer>
+ 	<section>
+		<div class="w3-sidebar w3-bar-block w3-black w3-xxlarge ">
+		<!-- 	<a href="{% url 'welcome' %}"><img class="main-logo fa" src="{% static 'message/logo.png' %}"/></a>
+		-->  <a style="margin-bottom: -7px;" href="{% url 'welcome' %}" class="w3-bar-item w3-button fa"><i class="fa fa-cloud icon"></i></a>
+		<a href="{% url 'welcome' %}" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a> 
+		<a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a> 
+		<a style="margin-top: 235px" href="{% url 'logout' %}" class="w3-bar-item w3-button"><i class="fa fa-sign-out"></i></a>
+		<a style="margin-top: -20px" href="{% url 'profile' %}" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a> 
+		</div>
+	</section>
+<div style="margin-left:100px">
+		<main role="main" class="w3-container">
+		<div class="row">
+			<div class="col-md-8">
+				{% if messages %}
+					{% for message in messages %}
+						<div class="alert alert-{{ message.tags }}">
+							{{ message }}
+						</div>
+					{% endfor %}
+				{% endif %}
+				<br>
+	  			{% block content %}{% endblock %}
+				
+			</div>
+		</div>
+	</main>
 </div>
-
+<hr>
+	<div class="footer-basic">
+        <footer>
+            <div class="social"><a href="https://www.instagram.com/tollgatorapp"><i class="icon fa fa-github"></i></a><a href="https://twitter.com/tollgator"><i class="icon fa fa-twitter"></i></a><a href="https://web.facebook.com/Tollgator-102626081740548"><i class="icon fa fa-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item" ><a href="#">Home</a></li>
+                <li class="list-inline-item"><a href="#">Services</a></li>
+                <li class="list-inline-item"><a href="#">About</a></li>
+            </ul>
+            <p class="copyright">Ace © 2021</p>
+        </footer>
+    </div>    
 </body>
 </html>
