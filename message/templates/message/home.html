@@ -1,12 +1,43 @@
-{% extends "message/base.html" %}
-{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
 
-  <main class="px-3">
-    <h1>Organise Your Announcements More Efficiently.</h1>
-    <p class="lead">Ace helps you organise, manage and structure your announcements in an orderly manner.</p>
-    <p class="lead">
-      <a href="{% url 'login' %}" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Get Started</a>
-    </p>
-  </main>
+	 <!-- Required meta tags -->
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-{% endblock content %}
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/
+    font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'message/home.css' %}">
+
+	<title>Msage</title>
+</head>
+<body>
+<section class="hh">
+    
+<nav class="navbar navbar-light">
+  <div class="container-fluid">
+  	<a class="logo" href="#"><img class="" src="static/images/Vector.png"></a>
+  	<a class="ace" href="#">ACE</a>
+    <a class="link" href="#">Download</a>
+    <a class="link" style="width: 103px; left: 667px;" href="#">Why Us?</a>
+    <a class="link" style="width: 125px; left: 794px;" href="#">Resources</a>
+    <a class= "button" href="">Talk to sales</button></a>
+  </div>
+	</nav>
+	<div >
+		<img class="headpic" src="static/images/phone.png">
+	</div>
+	<p class="create">create workspace</p>
+	<h1 class="create2">Create Your Next Announcement Workspace With Ace</h1>
+	<p class="create3">Organize and structure your announcement. Get notifications on new announcement.</p>
+	<a class="account" style="" href="#">Create Account</a>
+	<a class="demo" style="" href="#">Demo</a>
+</section>
+
