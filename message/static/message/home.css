@@ -5,14 +5,15 @@ body{
 }
 .hh{
 background-color: #874FB7;
-border-radius: 0px 0px 910px 322px / 0px 0px 211px 16px;
-height: 40rem;
+border-radius: 0px 0px 770px 466px / 0px 0px 344px 32px;
+height: 32rem;
 }
 .headpic{
 position: absolute;
-height: 454px;
-left: 906px;
-top: 195px;
+height: 529px;
+    left: 799px;
+    top: 150px;
+    width: 420px;
 }
 
 .head{
@@ -66,12 +67,13 @@ color: black;
 width: 328px;
 height: 40px;
 left: 120px;
-top: 208px;
+top: 160px;
 
 background: #874FB7;
 border: 2px solid #FFFFFF;
 box-sizing: border-box;
 border-radius: 4px;
+padding: 6px 20px 4px 66px;
 }
 
 .create2{
@@ -79,7 +81,7 @@ position: absolute;
 width: 519px;
 height: 216px;
 left: 120px;
-top: 288px;
+top: 148px;
 font-size: 3.125rem;
 }
 
@@ -88,40 +90,83 @@ font-size: 3.125rem;
 width: 632px;
 height: 72px;
 left: 120px;
-top: 528px;
-  font-size: 24px;
+top: 341px;
+    font-size: 21px;
+    font-weight: 300;
 }
 
 .account{
   position: absolute;
-width: 224px;
-height: 56px;
+width: 188px;
+    height: 49px;
 left: 120px;
-top: 656px;
-
+top: 420px;
+color: #874FB7;
 background: #FFFFFF;
 border-radius: 4px;
+    text-align: center;
+    padding-top: 11px
 }
 
 .demo{
   position: absolute;
-width: 224px;
-height: 56px;
-left: 360px;
-top: 656px;
+    width: 188px;
+    height: 49px;
+    left: 338px;
+  top: 420px;
 
 background: #874FB7;
 border: 1px solid #FFFFFF;
 box-sizing: border-box;
 border-radius: 4px;
+    text-align: center;
+    padding-top: 11px;
+    color: inherit;
 }
 
+.download{
+position: absolute;
+width: 368px;
+height: 42px;
+left: 120px;
+top: 530px;
+color: black;
+}
 
+.get{
+  position: absolute;
+width: 632px;
+height: 72px;
+left: 120px;
+top: 565px;
+color: black;
+}
 
+.google{
+  position: absolute;
+width: 258px;
+    height: 60px;
+left: 120px;
+top: 624px;
+text-align: center;
+background: #000000;
+border-radius: 8px;
+color: inherit;
+padding-top: 11px;
+}
 
-
-
-
+.apple{
+  position: absolute;
+    width: 258px;
+    height: 61px;
+    left: 407px;
+    top: 624px;
+color: inherit;
+text-align: center;
+background: #000000;
+border-radius: 8px;
+padding-top: 11px;
+}
 
 
 
