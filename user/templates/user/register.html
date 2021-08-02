@@ -1,11 +1,12 @@
-{% extends "message/base.html" %}
+{% extends "user/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
+<section>
 	<div class= 'content-section'>
 		<form method="POST">
 			{% csrf_token %}
 			<fieldset class='form-group'>
-				<legend class= 'boarder-bottom mb=4'>Sign Up</legend>
+				<legend style="text-align: center;" class= 'boarder-bottom mb=4'>Create an account</legend>
 				
 				{{ form |crispy }}
 
@@ -18,5 +19,5 @@
 			<small class="text-muted"> Already have an account? <a class="ml-2" href="{% url 'login' %}">Sign In</a></small>
 		</div>	
 	</div>
-
+</section>
 {% endblock content %}

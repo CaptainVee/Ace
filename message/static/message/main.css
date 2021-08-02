@@ -1,6 +1,6 @@
 body {
   color: white;
-  background-color: #343a40;
+  background-color: #874FB7;
   margin-top: inherit;
   margin-right: 0px;
   margin-left: 0px;
@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .content{
-  background: #fff;
+  background: #874FB7;
   padding: 10px 20px;
   margin-bottom: 20px;
   position: absolute;
@@ -219,9 +219,7 @@ a.article-title:hover {
   width: 100%;
 }
 
-.button:hover {
-  background-color: #555;
-}
+
 .w3-bar .w3-bar-item {
     padding: 8px 16px;
     float: left;
@@ -229,7 +227,7 @@ a.article-title:hover {
     border: none;
     display: block;
     outline: 0;
-    color: white;
+;
   }
 .w3-sidebar{
   height:100%;
@@ -249,7 +247,7 @@ a.article-title:hover {
     vertical-align: middle;
     overflow: hidden;
     text-decoration: none;
-    color: inherit;
+    color: #874FB7;
     background-color: inherit;
     text-align: center;
     cursor: pointer;
