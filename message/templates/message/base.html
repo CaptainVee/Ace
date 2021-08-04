@@ -19,14 +19,24 @@
 	<title>Msage</title>
 </head>
 <body>
+<nav style="background-color: #874FB7; height: 75px;" class="navbar navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Worksppace</a>
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
  	<section>
 		<div style="background-color: #E5E5E5;" class="w3-sidebar w3-bar-block w3-xxlarge ">
 		<!-- 	<a href="{% url 'welcome' %}"><img class="main-logo fa" src="{% static 'message/logo.png' %}"/></a>
 		-->  <a style="margin-bottom: -7px;" href="{% url 'welcome' %}" class="w3-bar-item w3-button fa"><i class="fa fa-cloud icon"></i></a>
 		<a href="{% url 'welcome' %}" class="w3-bar-item w3-button"><i class="fa fa-home"></i></a> 
 		<a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a> 
-		<a style="margin-top: 157px;" href="{% url 'logout' %}" class="w3-bar-item w3-button"><i class="fa fa-sign-out"></i></a>
-		<a style="margin-top: -20px" href="{% url 'profile' %}" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a> 
+		<a href="{% url 'logout' %}" class="w3-bar-item w3-button"><i class="fa fa-sign-out"></i></a>
+		<a href="{% url 'profile' %}" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a> 
 		</div>
 	</section>
 <div style="margin-left:100px">
@@ -58,6 +68,9 @@
             </ul>
             <p class="copyright">Ace © 2021</p>
         </footer>
-    </div>    
+    </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body> 
 </html>

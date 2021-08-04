@@ -29,12 +29,12 @@
 					{% endif %}
 				{% endfor %}
 				<br>
-				<br>
 				<h2>Approved Announcements </h2>
 				{% for object in objects %}
 					{% if object.approved == True %}
-					<div class="card">
-						<h3>{{ object.title }}</h3>
+
+			<div class="card">
+						<h3></h3>
 						<p>{{ object.content }}</p>
 						<h6>written by {{ object.author.user }}</h6>
 						{% if workspace.head == user %}
@@ -50,12 +50,10 @@
 				<button class= 'btn- btn-outline-info' type="submit">Post</button>
 			</div>
 		</form>
+
 	      	<div>
 	      		<a class="btn info btn-sm mt-1 mb-1"href="{% url 'workspace-details' pk %}">Back</a>
 	      	</div>
 	</div>
-
-
-
 
 {% endblock content %}

@@ -1,6 +1,6 @@
 body {
   color: white;
-  background-color: #874FB7;
+  background-color: #E5E5E5;
   margin-top: inherit;
   margin-right: 0px;
   margin-left: 0px;
@@ -134,32 +134,6 @@ a.article-title:hover {
   font-size: 2.5rem;
 } 
 
-.btn {
-  color:royalblue;
-  background-color: gainsboro;
-  padding: 3px 25px;
-  font-size: 12px;
-  cursor: pointer;
-  display: inline-block;
-  border-radius: 8px;
-  text-align: center;
-  height:21;
-}
-
-.btn:hover {background: #eee;}
-
-.success {color: green;}
-.info {color: white;
-      background-color: darkgray;}
-.warning {color: orange;}
-.danger {color: white;
-        background-color: indianred;}
-.default {color: black;}
-
-* {
-  box-sizing: border-box;
-}
-
 .column {
   float: left;
   width: 33.3%;
@@ -207,19 +181,6 @@ a.article-title:hover {
   color: grey;
 }
 
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #26364ea6;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-}
-
-
 .w3-bar .w3-bar-item {
     padding: 8px 16px;
     float: left;
@@ -231,15 +192,15 @@ a.article-title:hover {
   }
 .w3-sidebar{
   height:100%;
-  width:70px;
-  background-color:#fff;
+  width:100px;
   position:fixed!important;
   z-index:1;
-  overflow:auto
+  overflow:auto;
+  border: 2px solid #C5AED9;
+  font-size:36px!important;
 }
 
 .w3-black,.w3-hover-black:hover{color:#fff!important;background-color:#212529}
-.w3-xxlarge{font-size:36px!important}
   .w3-btn, .w3-button {
     border: none;
     display: inline-block;
@@ -340,6 +301,66 @@ a{
    font-weight: bolder;
    display: none;
 }
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
